@@ -1,5 +1,5 @@
 # Wordpress-ekx
-Wordpress epdnkx
+Wordpress epdkx
 
 Wordpress 某款插件测试代码
 
