@@ -1,11 +1,6 @@
 <?php
-// +----------------------------------------------------------------------
-// | ERPHP [ PHP DEVELOP ]
-// +----------------------------------------------------------------------
-// | Copyright (c) 2013 http://www.mobantu.com All rights reserved.
-// +----------------------------------------------------------------------
-// | Author: mobantu <82708210@qq.com>
-// +----------------------------------------------------------------------
+// mouchajiankaixindaima
+
 
 if ( !defined('ABSPATH') ) {exit;}
 
@@ -13,8 +8,6 @@ add_action('admin_menu', 'mobantu_erphp_menu');
 function mobantu_erphp_menu() {
 	global $wpdb;
 	$tx_count = $wpdb->get_var("SELECT count(ice_id) FROM $wpdb->iceget where ice_success != 1");
-	//$token = get_option('MBT_ERPHPDOWN_token');
-	//if($token){
 		if (function_exists('add_menu_page')) {
 			if(current_user_can('administrator')){
 				add_menu_page('erphpdown', 'ErphpDown'.($tx_count?'<span class="awaiting-mod">'.$tx_count.'</span>':''), 'activate_plugins', 'erphpdown/admin/erphp-settings.php', '','dashicons-shield');
@@ -92,11 +85,6 @@ function mobantu_erphp_menu() {
 				add_submenu_page('erphpdown/admin/erphp-add-money-online.php', '推广VIP', '推广VIP', 'read', 'erphpdown/admin/erphp-reference-vip-list.php');
 				add_submenu_page('erphpdown/admin/erphp-add-money-online.php', '免费下载记录', '免费下载记录', 'read', 'erphpdown/admin/erphp-vipdown-list-my.php');
 			}
-	  //  }
-	//}else{
-	//	if (function_exists('add_menu_page')) {
-	//		add_menu_page('erphpdown', 'ErphpDown', 'activate_plugins', 'erphpdown/admin/erphp-active.php', '','dashicons-admin-network');
-	//	}
 	}
     
 }
